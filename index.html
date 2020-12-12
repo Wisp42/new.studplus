@@ -6,31 +6,20 @@
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+	<script src="scripts/main.js"></script>
 	<title>Stud+</title>
 </head>
-<body onload="onload_show(surgery_db, 'surgery')">
-	<header class="header">
-		<div class="header-warp">
-			<div class="header__btn header__back-btn">
-				<a href="#" class="header__btn_link">To list</a>
-			</div>
-			<div class="header-warp__title_warp">
-				<h1 class="header-warp__title">Stud+</h1>
-			</div>
-			<div class="header__btn header__menu-btn">
-				<a href="#" class="header__btn_link">To menu</a>
+<body onload="onload_header(name='Stud+', isMain=true)">
+	<div class="main-nav">
+		<div class="container">
+			<div class="main-nav__wrap">
+				<div class="main-nav__item"><a href="categories_lists/surgery.html" class="main-nav__link">Хирургия</a></div>
+				<div class="main-nav__item empty"><a href="categories_lists/therapy.html" class="main-nav__link">Терапия</a></div>
+				<div class="main-nav__item empty"><a href="categories_lists/obstetrics.html" class="main-nav__link">Акушерство</a></div>
+				<div class="main-nav__item empty"><a href="categories_lists/pediatrics.html" class="main-nav__link">Педиатря</a></div>
 			</div>
 		</div>
-	</header>
-	<div class="container">
-		<input type="text" id="search_form" oninput="oninput_search(surgery_db)">
 	</div>
-	<div class="container">
-		<div class="list_contant">
-			
-		</div>
-	</div>
-
 	<script src="scripts/database.js"></script>
 	<script src="scripts/main.js"></script>
 </body>

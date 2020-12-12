@@ -12,8 +12,29 @@ function createListItem(content, category) {
 	list_item_link.href = `../categories/${category}/page${i+1}.html`;
 	
 	list_item.insertAdjacentElement('beforeend', list_item_link);
-	list_item.className = 'list__item';
+	if (content[i].status == ''){
+		list_item.className = 'list__item empty';
+	}else{
+		list_item.className = 'list__item';
+	}
+
 	list_wrap.appendChild(list_item);
+}
+
+function onload_header(name='Stud+', isMain=false, isList=false, isPage=false, backBtn='index') {
+	var createHeader = document.createElement('header');
+	createHeader.className = 'header';
+	var backBtn_link = `../${backBtn}.html`;
+
+
+	createHeader.innerHTML = `<div class="header-warp"><div class="header__title">${name}</div><nav class="header__nav"><div class="header-nav__item header-nav__item_back"><a href="${backBtn_link}" class="header-nav__item_link">Назад</a></div><div class="header-nav__item header-nav__item_category"><a href="categories_lists/surgery.html" class="header-nav__item_link">Хирургия</a></div><div class="header-nav__item header-nav__item_category empty"><a href="categories_lists/therapy.html" class="header-nav__item_link">Терапия</a></div><div class="header-nav__item header-nav__item_category empty"><a href="categories_lists/obstetrics.html" class="header-nav__item_link">Акушерство</a></div><div class="header-nav__item header-nav__item_category empty"><a href="categories_lists/pediatrics.html" class="header-nav__item_link">Педиатря</a></div></nav></div>`;
+	document.body.insertAdjacentElement('afterbegin' , createHeader);
+
+	var headerNav = document.querySelector('.header__nav');
+	if (isMain){
+		headerNav.style.display = 'none';
+	}
+
 }
 function onload_show(database, cat) {
 	for(i = 0; i < database.length; i++){
