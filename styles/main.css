@@ -159,14 +159,17 @@ a, a:visited, a:active{
 	color: #d46;
 	transition: 0.15s;
 }
+.empty:hover{
+	background-color: #f46;
+	border: 1px solid #d46;
+	color: #2a2a2a;
+}
 .empty > a{
 	pointer-events: none
 }
 .header-nav__item + .empty{
 	border: 0px solid transparent;
 }
-.empty:hover{
-	background-color: #f46;
-	border: 1px solid #d46;
-	color: #2a2a2a;
+.header-nav__item + .empty:hover{
+	border: 0px solid transparent;
 }
