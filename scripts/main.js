@@ -79,7 +79,6 @@ function serch_keys_RegExp(keys, input_val) {
 			}
 		}
 	}
-	// console.log(boolArr)
 	if(boolArr.includes(true)){
 		return true
 	}else{
@@ -96,14 +95,9 @@ function oninput_search(database) {
 	var search_input = document.getElementById('search_form');
 	var serch_RegExp = new RegExp(search_input.value, 'im');
 	var search_input_keys = search_input.value.split(', ');
-	// console.log(search_input_keys);
-	// console.log(serch_RegExp)
 	for (var i = 0; i < database.length; i++){
 		list_item_keys = database[i].keys.split(', ');
-		list_item_keys.push('');
-		// console.log(list_item_keys);
 		for (var j = 0; j < search_input_keys.length; j++){
-			// console.log(list_item_keys)
 			if (search_input.value == ''){
 				list_items[i].style.display = 'block';
 				list_item_links[i].style.whiteSpace = 'nowrap';
