@@ -8,7 +8,6 @@ function createListItem(content, category) {
 
 	list_item_link.innerHTML = (i+1) + '. ' + content[i].name;
 	list_item_link.className = 'list__item_link';
-	list_item_link.title = content[i].name;
 	list_item_link.href = `../categories/${category}/page${i+1}.html`;
 	
 	list_item.insertAdjacentElement('beforeend', list_item_link);
@@ -17,6 +16,7 @@ function createListItem(content, category) {
 	}else{
 		list_item.className = 'list__item';
 	}
+	list_item.title = content[i].name;
 
 	list_wrap.appendChild(list_item);
 }
@@ -25,8 +25,6 @@ function onload_header(name='Stud+', isMain=false, isList=false, isPage=false, b
 	var createHeader = document.createElement('header');
 	createHeader.className = 'header';
 	var backBtn_link = `../${backBtn}.html`;
-
-
 	createHeader.innerHTML = `<div class="header-warp"><div class="header__title">${name}</div><nav class="header__nav"><div class="header-nav__item header-nav__item_back"><a href="${backBtn_link}" class="header-nav__item_link">Назад</a></div><div class="header-nav__item header-nav__item_category"><a href="../categories_lists/surgery.html" class="header-nav__item_link">Хирургия</a></div><div class="header-nav__item header-nav__item_category empty"><a href="../categories_lists/therapy.html" class="header-nav__item_link">Терапия</a></div><div class="header-nav__item header-nav__item_category empty"><a href="../categories_lists/obstetrics.html" class="header-nav__item_link">Акушерство</a></div><div class="header-nav__item header-nav__item_category empty"><a href="../categories_lists/pediatrics.html" class="header-nav__item_link">Педиатря</a></div></nav></div>`;
 	document.body.insertAdjacentElement('afterbegin' , createHeader);
 
