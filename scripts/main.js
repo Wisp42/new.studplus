@@ -1,5 +1,5 @@
 var list_items = document.querySelectorAll('p.list__item');
-var list_wrap = document.querySelector('div.list_contant');
+var list_wrap = document.querySelector('div.list_content');
 var list_item_links = document.querySelectorAll('a.list__item_link');
 
 function createListItem(content, category) {
@@ -11,9 +11,9 @@ function createListItem(content, category) {
 	list_item_link.href = `../categories/${category}/page${i+1}.html`;
 	
 	list_item.insertAdjacentElement('beforeend', list_item_link);
-	if (content[i].status == ''){
+	if (content[i].status == 'empty' || content[i].status == ''){
 		list_item.className = 'list__item empty';
-	}else{
+	}else if (content[i].status == 'write'){
 		list_item.className = 'list__item';
 	}
 	list_item.title = content[i].name;
@@ -24,13 +24,23 @@ function createListItem(content, category) {
 function onload_header(name='Stud+', isMain=false, isList=false, isPage=false, backBtn='index') {
 	var createHeader = document.createElement('header');
 	createHeader.className = 'header';
-	var backBtn_link = `../${backBtn}.html`;
+	var backBtn_link;
+	if (backBtn == 'index'){
+		var backBtn_link = `../${backBtn}.html`
+	}else if(backBtn != 'index' && isPage){
+		backBtn_link = `../../categories_lists/${backBtn}.html`
+	}
 	createHeader.innerHTML = `<div class="header-warp"><div class="header__title">${name}</div><nav class="header__nav"><div class="header-nav__item header-nav__item_back"><a href="${backBtn_link}" class="header-nav__item_link">Назад</a></div><div class="header-nav__item header-nav__item_category"><a href="../categories_lists/surgery.html" class="header-nav__item_link">Хирургия</a></div><div class="header-nav__item header-nav__item_category empty"><a href="../categories_lists/therapy.html" class="header-nav__item_link">Терапия</a></div><div class="header-nav__item header-nav__item_category empty"><a href="../categories_lists/obstetrics.html" class="header-nav__item_link">Акушерство</a></div><div class="header-nav__item header-nav__item_category empty"><a href="../categories_lists/pediatrics.html" class="header-nav__item_link">Педиатря</a></div></nav></div>`;
 	document.body.insertAdjacentElement('afterbegin' , createHeader);
 
 	var headerNav = document.querySelector('.header__nav');
+	var headerCatBtns = document.querySelectorAll('.header-nav__item_category');
 	if (isMain){
 		headerNav.style.display = 'none';
+	}else if (isPage){
+		for (var h = 0; h < headerCatBtns.length; h++){
+			headerCatBtns[h].style.display = 'none';
+		}
 	}
 
 }
@@ -100,7 +110,7 @@ function oninput_search(database) {
 			}else if (serch_RegExp.test(database[i].name)){
 				list_items[i].style.display = 'block';
 				list_item_links[i].style.whiteSpace = 'normal';
-			}else if (serch_keys(list_item_keys, search_input_keys)){
+			}else if (serch_keys_RegExp(list_item_keys, search_input_keys)){
 				list_items[i].style.display = 'block';
 				list_item_links[i].style.whiteSpace = 'normal';
 			}else{
