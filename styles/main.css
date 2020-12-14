@@ -63,10 +63,39 @@ li{
 	background-color: #2a2a2a;
 	color: #eee;
 }
+.focus-title{
+	font-style: italic;
+	font-weight: 700;
+	font-size: 22px;
+}
+.focus-content_enable{
+	height: 100%;
+	font-size: 20px;
+}
+.focus-content_disable{
+	height: 0;
+	font-size: 0;
+}
+/*.focus > *{
+	font-size: 0;
+}
+.focus > p > strong{
+	font-size: 20px;
+}*/
+
 
 @media screen and (max-width: 650px){
 	ol, ul{
 		padding-left: 10px;
+	}
+	.focus-content{
+		height: 0;
+		font-size: 0;
+		transition: 0.15s;
+	}
+	.focus:hover .focus-content{
+		height: 100%;
+		font-size: 20px;
 	}
 }
 
