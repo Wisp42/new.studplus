@@ -7,7 +7,7 @@ for(var f = 0; f < focus_items.length; f++){
 	focus_items[f].id = focus_itemId;
 	focus_content_items[f].id = focus_contentId;
 }
-$('.focus-content').hide('slow');
+$('.focus-content').hide();
 
 $('#focus-item-id-1').click(function(){
     $('#focus-content-id-1').toggle('slow');
