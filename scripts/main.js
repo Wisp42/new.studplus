@@ -107,6 +107,12 @@ function oninput_search(database) {
 			}else if (serch_keys_RegExp(list_item_keys, search_input_keys)){
 				list_items[i].style.display = 'block';
 				list_item_links[i].style.whiteSpace = 'normal';
+			}else if (!(isNaN(search_input.value))){
+				console.log('fff')
+				list_items[i].style.display = 'none';
+				list_items[search_input.value - 1].style.display = 'block';
+				list_item_links[search_input.value - 1].style.whiteSpace = 'nowrap';
+
 			}else{
 				list_items[i].style.display = 'none';
 			}
