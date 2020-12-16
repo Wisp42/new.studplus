@@ -88,7 +88,7 @@ li{
 	ol, ul{
 		padding-left: 10px;
 	}
-	.focus-content{
+	/*.focus-content{
 		height: 0;
 		font-size: 0;
 		transition: 0.15s;
@@ -96,7 +96,7 @@ li{
 	.focus:hover .focus-content{
 		height: 100%;
 		font-size: 20px;
-	}
+	}*/
 }
 
 .header{
