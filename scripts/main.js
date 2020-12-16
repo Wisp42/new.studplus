@@ -111,7 +111,7 @@ function oninput_search(database) {
 				console.log('fff')
 				list_items[i].style.display = 'none';
 				list_items[search_input.value - 1].style.display = 'block';
-				list_item_links[search_input.value - 1].style.whiteSpace = 'nowrap';
+				list_item_links[search_input.value - 1].style.whiteSpace = 'normal';
 
 			}else{
 				list_items[i].style.display = 'none';
