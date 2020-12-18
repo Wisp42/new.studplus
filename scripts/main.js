@@ -17,6 +17,9 @@ function createListItem(content, category) {
 		list_item.className = 'list__item';
 	}
 	list_item.title = content[i].name;
+	if (content[i].tags == 'акушерство'){
+		list_item.style.border = '1px solid #c94'
+	}
 
 	list_wrap.appendChild(list_item);
 }
@@ -30,7 +33,7 @@ function onload_header(name='Stud+', isMain=false, isList=false, isPage=false, b
 	}else if(backBtn != 'index' && isPage){
 		backBtn_link = `../../categories_lists/${backBtn}.html`
 	}
-	createHeader.innerHTML = `<div class="header-warp"><div class="header__title">${name}</div><nav class="header__nav"><div class="header-nav__item header-nav__item_back"><a href="${backBtn_link}" class="header-nav__item_link">Назад</a></div><div class="header-nav__item header-nav__item_category"><a href="../categories_lists/surgery.html" class="header-nav__item_link">Хирургия</a></div><div class="header-nav__item header-nav__item_category empty"><a href="../categories_lists/therapy.html" class="header-nav__item_link">Терапия</a></div><div class="header-nav__item header-nav__item_category empty"><a href="../categories_lists/obstetrics.html" class="header-nav__item_link">Акушерство</a></div><div class="header-nav__item header-nav__item_category empty"><a href="../categories_lists/pediatrics.html" class="header-nav__item_link">Педиатря</a></div></nav></div>`;
+	createHeader.innerHTML = `<div class="header-warp"><div class="header__title">${name}</div><nav class="header__nav"><div class="header-nav__item header-nav__item_back"><a href="${backBtn_link}" class="header-nav__item_link">Назад</a></div><div class="header-nav__item header-nav__item_category"><a href="../categories_lists/surgery.html" class="header-nav__item_link">Хирургия</a></div><div class="header-nav__item header-nav__item_category empty"><a href="../categories_lists/therapy.html" class="header-nav__item_link">Терапия</a></div><div class="header-nav__item header-nav__item_category"><a href="../categories_lists/obstetrics.html" class="header-nav__item_link">Акушерство</a></div><div class="header-nav__item header-nav__item_category empty"><a href="../categories_lists/pediatrics.html" class="header-nav__item_link">Педиатря</a></div></nav></div>`;
 	document.body.insertAdjacentElement('afterbegin' , createHeader);
 
 	var headerNav = document.querySelector('.header__nav');
@@ -112,7 +115,6 @@ function oninput_search(database) {
 				list_items[i].style.display = 'none';
 				list_items[search_input.value - 1].style.display = 'block';
 				list_item_links[search_input.value - 1].style.whiteSpace = 'normal';
-
 			}else{
 				list_items[i].style.display = 'none';
 			}
