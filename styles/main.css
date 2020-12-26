@@ -216,14 +216,15 @@ li{
 }
 
 .empty{
-	border: 1px solid #c41420;
-	color: #c41420;
+	border: 1px solid #F3C90A;
+	color: #F3C90A;
+	opacity: 50%;
 	transition: 0.15s;
 }
 .empty:hover{
-	background-color: #c41420;
-	border: 1px solid #c41420;
-	color: #2a2a2a;
+	background-color: #2a2a2a;
+	/*border: 1px solid #FfC90A;*/
+	/*color: #2a2a2a;*/
 }
 .empty > a{
 	pointer-events: none;
@@ -234,3 +235,6 @@ li{
 .header-nav__item + .empty:hover{
 	border: 0px solid transparent;
 }
+/*c41420*/
+/*F3C90A*/
+/*FF4028*/
