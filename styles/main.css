@@ -197,7 +197,7 @@ li{
 	position: relative;
 	margin: 10px 0;
 	background-color: #2a2a2a;
-	border: 1px solid transparent;
+	border: 1px solid #4d6;
 	border-radius: 40px;
 
 	font-size: 20px;
@@ -216,8 +216,8 @@ li{
 }
 
 .empty{
-	border: 1px solid #F3C90A;
-	color: #F3C90A;
+	border: 1px solid transparent;
+	/*color: #F3C90A;*/
 	opacity: 50%;
 	transition: 0.15s;
 }
