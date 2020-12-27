@@ -215,8 +215,8 @@ li{
 }
 
 .empty{
-	border: 1px solid #F3C90A;
-	color: #F3C90A;
+	/*border: 1px solid #c41420;*/
+	color: #a0a0a0;
 	opacity: 50%;
 	transition: 0.15s;
 }
@@ -237,3 +237,4 @@ li{
 /*c41420*/
 /*F3C90A*/
 /*FF4028*/
+/*F3C90A*/
